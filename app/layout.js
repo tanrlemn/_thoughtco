@@ -6,6 +6,7 @@ const sofiaSans = Sofia_Sans({ subsets: ['latin'] });
 
 // providers
 import { ThemeProvider } from './providers/ThemeProvider';
+import { LoadingProvider } from './providers/LoadingProvider';
 
 // local components
 import Navbar from './navigation/navbar';
@@ -21,8 +22,10 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={sofiaSans.className}>
         <ThemeProvider>
-          <Navbar />
-          {children}
+          <LoadingProvider>
+            <Navbar />
+            {children}
+          </LoadingProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,8 +1,5 @@
 'use client';
 
-// hooks
-import { useIsMobile } from 'app/hooks/useIsMobile';
-
 // chakra-ui
 import {
   Box,
@@ -17,7 +14,11 @@ import {
 } from '@chakra-ui/react';
 
 export default function ImageGrid({ images }) {
-  const dimension = '20rem';
+  const dimension = {
+    base: '10rem',
+    md: '15rem',
+    lg: '20rem',
+  };
   return (
     <Grid
       templateColumns='repeat(2, 1fr)'

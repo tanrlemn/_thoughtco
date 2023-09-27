@@ -9,13 +9,17 @@ import underline from '@/app/_components/brandElements/underline.svg';
 export default function Home() {
   return (
     <Flex
-      pr={'3rem'}
+      direction={{ base: 'column-reverse', md: 'row' }}
+      pr={{ base: 0, md: '3rem' }}
+      p={{ base: '1.5rem', md: 0 }}
       mt={'2rem'}
-      align={'center'}>
-      <Box ml={'-5rem'}>
+      align={{ base: 'flex-start', md: 'center' }}>
+      <Box
+        ml={{ base: 0, md: '-5rem' }}
+        mt={{ base: '1.5rem', md: 0 }}>
         <ImageGrid />
       </Box>
-      <Box ml={'4rem'}>
+      <Box ml={{ base: 0, md: '4rem' }}>
         <Heading
           size={'xl'}
           mb={'1rem'}>

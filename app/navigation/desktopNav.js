@@ -5,6 +5,7 @@ import { Box, Heading, Text, HStack, Link, Button } from '@chakra-ui/react';
 
 // local components
 import MainButton from '../_components/mainButton';
+import { routeList } from './routeList';
 
 export default function DesktopNav() {
   return (
@@ -12,18 +13,13 @@ export default function DesktopNav() {
       w={'100%'}
       justify={'space-between'}>
       <HStack>
-        <NavLink
-          title={'Studies'}
-          path={'/studies'}
-        />
-        <NavLink
-          title={'Websites'}
-          path={'/websites'}
-        />
-        <NavLink
-          title={'Company'}
-          path={'/company'}
-        />
+        {routeList.map((route) => (
+          <NavLink
+            key={route.path}
+            title={route.title}
+            path={route.path}
+          />
+        ))}
       </HStack>
       <MainButton text={'Free consultation'} />
     </HStack>
