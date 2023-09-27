@@ -1,8 +1,16 @@
 import './globals.css';
-import { Sofia_Sans } from 'next/font/google';
 
+// font
+import { Sofia_Sans } from 'next/font/google';
 const sofiaSans = Sofia_Sans({ subsets: ['latin'] });
 
+// providers
+import { ThemeProvider } from './providers/ThemeProvider';
+
+// local components
+import Navbar from './navigation/navbar';
+
+// metadata
 export const metadata = {
   title: 'thoughtco',
   description: 'Creating safe experiences that encourage trust',
@@ -11,7 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={sofiaSans.className}>{children}</body>
+      <body className={sofiaSans.className}>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
