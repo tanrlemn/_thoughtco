@@ -3,6 +3,9 @@
 // chakra-ui
 import { Box, Heading, Text, HStack, Link, Button } from '@chakra-ui/react';
 
+// local components
+import MainButton from '../_components/mainButton';
+
 export default function DesktopNav() {
   return (
     <HStack
@@ -22,19 +25,7 @@ export default function DesktopNav() {
           path={'/company'}
         />
       </HStack>
-      <Button
-        _hover={{
-          background: 'var(--midPurpleGray, #B397BF)',
-        }}
-        p={'0.8125rem 1.4375rem'}
-        border={'2px solid var(--darkPurpleGray, #584361)'}
-        borderRadius={'var(--mainBorderRadius)'}
-        background={'var(--lightPurpleGray, #e0c8ea)'}
-        color={'var(--blackAlt, #161616)'}
-        fontSize={'0.9rem'}
-        fontWeight={600}>
-        Free consultation
-      </Button>
+      <MainButton text={'Free consultation'} />
     </HStack>
   );
 }

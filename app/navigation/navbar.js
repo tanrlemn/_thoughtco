@@ -28,6 +28,7 @@ export default function Navbar() {
       borderBottom={'1px solid var(--midPurpleGray, #B397BF)'}>
       <Center w={'100%'}>
         <Link
+          href='/'
           mr={'1.25rem'}
           color={'var(--darkPurpleGrayAlt, #432E4C)'}
           borderRadius={'var(--mainBorderRadius)'}
@@ -36,6 +37,7 @@ export default function Navbar() {
             outline: '1px solid var(--midPurpleGray, #432E4C)',
           }}>
           <Flex
+            minW={'fit-content'}
             align={'flex-end'}
             p={'0.3125rem 1.4375rem'}>
             <Image
@@ -44,7 +46,6 @@ export default function Navbar() {
               pb={'0.3rem'}
             />
             <Heading
-              size={'md'}
               fontWeight={600}
               lineHeight={'1.56288rem'}
               letterSpacing={'-0.04688rem'}

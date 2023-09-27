@@ -69,6 +69,7 @@
 
   /* Borders */
   --mainBorderRadius: 0.5625rem 0.5625rem 0.5625rem 0rem;
+  --topLeftBorderRadius: 0rem 0.5625rem 0.5625rem 0.5625rem;
 }
 
 * {
