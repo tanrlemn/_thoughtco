@@ -1,11 +1,11 @@
 'use client';
 
 // context
-import { LoadingContext } from '@/app/providers/LoadingProvider';
+import { LoadingContext } from '@/app/lib/providers/LoadingProvider';
 
 // hooks
 import { useContext, useEffect } from 'react';
-import { useIsMobile } from '@/app/hooks/useIsMobile';
+import { useIsMobile } from '@/app/lib/hooks/useIsMobile';
 
 // chakra-ui
 import {
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setLoading(false);
-  }, [setLoading]);
+  }, [setLoading, isMobile]);
 
   return (
     <Flex

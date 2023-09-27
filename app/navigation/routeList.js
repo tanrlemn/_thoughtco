@@ -1,9 +1,5 @@
 export const routeList = [
   {
-    title: 'Home',
-    path: '/',
-  },
-  {
     title: 'Studies',
     path: '/studies',
   },

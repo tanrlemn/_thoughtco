@@ -5,8 +5,9 @@ import { Sofia_Sans } from 'next/font/google';
 const sofiaSans = Sofia_Sans({ subsets: ['latin'] });
 
 // providers
-import { ThemeProvider } from './providers/ThemeProvider';
-import { LoadingProvider } from './providers/LoadingProvider';
+import { ThemeProvider } from './lib/providers/ThemeProvider';
+import { LoadingProvider } from './lib/providers/LoadingProvider';
+import { ScaleProvider } from './lib/providers/ScaleProvider';
 
 // local components
 import Navbar from './navigation/navbar';
@@ -21,12 +22,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={sofiaSans.className}>
-        <ThemeProvider>
-          <LoadingProvider>
-            <Navbar />
-            {children}
-          </LoadingProvider>
-        </ThemeProvider>
+        <LoadingProvider>
+          <ScaleProvider>
+            <ThemeProvider>
+              <Navbar />
+              {children}
+            </ThemeProvider>
+          </ScaleProvider>
+        </LoadingProvider>
       </body>
     </html>
   );

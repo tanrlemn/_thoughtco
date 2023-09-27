@@ -3,7 +3,7 @@
 // hooks
 import { useSyncExternalStore } from 'react';
 
-export function useWindowSize() {
+export function useWindowHeight() {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
@@ -13,13 +13,7 @@ function subscribe(callback) {
 }
 
 function getSnapshot() {
-  console.log('getSnapshot');
-  console.log(window.innerWidth);
-  console.log(window.innerHeight);
-  return {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
+  return window.innerHeight;
 }
 
 function getServerSnapshot() {
