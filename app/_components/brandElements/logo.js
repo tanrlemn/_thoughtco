@@ -1,17 +1,18 @@
 'use client';
 
 // chakra-ui
-import { Flex, Heading, Image, Link } from '@chakra-ui/react';
+import { Flex, Heading, Image, Link, Box } from '@chakra-ui/react';
 
 // local components
-import underscore from '@/app/_components/brandElements/underscore.svg';
+import Underscore from '@/app/_components/brandElements/underscore.js';
 
-export default function Logo() {
+export default function Logo({ color }) {
   return (
     <Link
       href='/'
+      pt={'0.2rem'}
       mr={'1.25rem'}
-      color={'var(--darkPurpleGrayAlt, #432E4C)'}
+      color={color?.font || 'var(--darkPurpleGrayAlt, #432E4C)'}
       borderRadius={'var(--mainBorderRadius)'}
       transition={'all 0.2s ease-in-out'}
       _hover={{
@@ -21,11 +22,10 @@ export default function Logo() {
         minW={'fit-content'}
         align={'flex-end'}
         p={'0.3125rem 1.4375rem'}>
-        <Image
-          src={underscore.src}
-          alt={'underscore'}
-          pb={'0.3rem'}
-        />
+        <Box pb={'0.3rem'}>
+          <Underscore color={color?.underscore || 'var(--orange, #FF7300)'} />
+        </Box>
+
         <Heading
           fontWeight={600}
           lineHeight={'1.56288rem'}

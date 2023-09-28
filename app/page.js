@@ -6,6 +6,12 @@ import ImageGrid from './_components/imageGrid';
 import MainButton from './_components/mainButton';
 import underline from '@/app/_components/brandElements/underline.svg';
 
+// local images
+import beekeeper from '@/public/images/beekeeper.jpg';
+import cafeOwner from '@/public/images/cafeOwner.jpg';
+import artistPainting from '@/public/images/artistPainting.jpg';
+import printShopOwner from '@/public/images/printShopOwner.jpg';
+
 export default function Home() {
   return (
     <Flex
@@ -13,11 +19,19 @@ export default function Home() {
       pr={{ base: 0, md: '3rem' }}
       p={{ base: '1.5rem', md: 0 }}
       mt={'2rem'}
+      mb={'12rem'}
       align={{ base: 'flex-start', md: 'center' }}>
       <Box
-        ml={{ base: 0, md: '-5rem' }}
+        ml={{ base: 0, md: '-7rem' }}
         mt={{ base: '1.5rem', md: 0 }}>
-        <ImageGrid />
+        <ImageGrid
+          images={[
+            { src: artistPainting.src, alt: 'artist painting' },
+            { src: printShopOwner.src, alt: 'print shop owner' },
+            { src: cafeOwner.src, alt: 'cafe owner' },
+            { src: beekeeper.src, alt: 'beekeeper' },
+          ]}
+        />
       </Box>
       <Box ml={{ base: 0, md: '4rem' }}>
         <Heading
