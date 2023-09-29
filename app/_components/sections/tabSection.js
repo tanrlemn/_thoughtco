@@ -33,11 +33,12 @@ export default function TabSection({
 }) {
   return (
     <VStack
-      p={'0 2rem 5rem 2rem'}
+      p={{ base: '0 1rem 5rem 1rem', md: '0 2rem 5rem 2rem' }}
       align={'flex-start'}
       color={color}
       background={bgColor}>
       <Flex
+        direction={{ base: 'column', md: 'row' }}
         borderTop={`1px solid ${borderColor}`}
         pt={'2rem'}
         mb={'5rem'}
@@ -46,12 +47,13 @@ export default function TabSection({
         mt={'6rem'}>
         <Box maxW={'30rem'}>
           <Heading
+            mb={{ base: '0.5rem', md: 0 }}
             fontWeight={500}
             size={'lg'}>
             {heading}
           </Heading>
         </Box>
-        <Box maxW={'30rem'}>
+        <Box maxW={{ base: '100%', sm: '30rem' }}>
           <Text fontSize={'1.25rem'}>{text}</Text>
           <Box mt={'1.5rem'}>
             <Link href={buttonLink}>
@@ -90,9 +92,13 @@ export default function TabSection({
               p={4}
               key={index}>
               <Flex
+                direction={{ base: 'column', md: 'row' }}
                 justify={'space-between'}
                 pt={'1.2rem'}>
-                <Box maxW={'30rem'}>
+                <Box
+                  maxW={{ base: '100%', sm: '30rem' }}
+                  mb={{ base: '1.5rem', md: 0 }}
+                  mr={{ base: '1.5rem', lg: 0 }}>
                   <Text>{tab.text}</Text>
                   <Box mt={'1rem'}>
                     <Link href={tab.buttonLink}>
@@ -106,7 +112,9 @@ export default function TabSection({
                     </Link>
                   </Box>
                 </Box>
-                <Box maxW={'30rem'}>
+                <Box
+                  minW={{ base: '100%', md: '20rem', lg: '25rem' }}
+                  maxW={{ base: '100%', md: '20rem', lg: '25rem' }}>
                   <ImageFrame image={tab.image} />
                 </Box>
               </Flex>

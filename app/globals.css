@@ -91,3 +91,69 @@ body {
   color: var(--black);
   background: var(--lightestOrange, #d9d0cb);
 }
+
+.loading {
+  animation: loading 3s ease-in-out infinite;
+}
+
+.animateUnderscore {
+  animation: animateUnderscore 3s ease-in-out infinite;
+}
+
+.animateText {
+  animation: animateText 3s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animateUnderscore {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes animateText {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-1px);
+  }
+
+  30% {
+    transform: translateX(1px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

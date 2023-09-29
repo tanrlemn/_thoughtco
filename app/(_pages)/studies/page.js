@@ -13,6 +13,7 @@ import { Box, Heading } from '@chakra-ui/react';
 // local components
 import { routeStyles } from '@/app/lib/styles/routeStyles';
 import MainPage from '@/app/_components/mainPage';
+import Loading from '@/app/loading';
 
 export default function StudiesPage() {
   const pathname = usePathname();
@@ -26,6 +27,7 @@ export default function StudiesPage() {
   }, [setLoading, pathname]);
   return (
     <MainPage routeStyle={routeStyle}>
+      <Loading routeStyle={routeStyle} />
       <Heading color={'#fff'}>Studies</Heading>
     </MainPage>
   );
