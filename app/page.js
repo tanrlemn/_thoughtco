@@ -13,7 +13,7 @@ import { Box, Heading, Text, Flex, Image, Input } from '@chakra-ui/react';
 // local components
 import ImageGrid from './_components/images/imageGrid';
 import MainButton from './_components/buttons/mainButton';
-import underline from '@/app/_components/brandElements/underline.svg';
+import Underline from '@/app/_components/brandElements/underline.js';
 import Loading from './loading';
 
 // local images
@@ -65,10 +65,9 @@ export default function Home() {
               border={'2px solid var(--darkPurpleGray, #584361)'}
               maxW={'17.5625rem'}
             />
-            <Image
-              m={'0.5rem 0rem'}
-              alt='underline'
-              src={underline.src}
+            <Underline
+              color={' var(--orange, #ff7300)'}
+              margin={'0.5rem 0'}
             />
             <MainButton
               text={'Request a consultation'}

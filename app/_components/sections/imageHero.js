@@ -6,7 +6,7 @@ import { ArrowDownIcon } from '@chakra-ui/icons';
 
 // local components
 import MainButton from '../buttons/mainButton';
-import IconButton from '../buttons/iconButton';
+import IconLink from '../buttons/iconLink';
 
 export default function ImageHero({
   subtitle,
@@ -60,7 +60,7 @@ export default function ImageHero({
                   borderRadius='var(--mainBorderRadius)'
                 />
               </Box>
-              <IconButton
+              <IconLink
                 textColor={subtitleColor}
                 hoverTextColor='var(--lightPurpleGray, #E0C8EA)'
                 rightIcon={<ArrowDownIcon />}

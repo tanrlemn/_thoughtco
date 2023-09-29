@@ -11,15 +11,11 @@ export default function Logo({ color, shouldLink = true, animate = false }) {
     <>
       {shouldLink ? (
         <Link
-          href='/'
           pt={'0.2rem'}
           mr={'1.25rem'}
-          color={color?.font || 'var(--darkPurpleGrayAlt, #432E4C)'}
-          borderRadius={'var(--mainBorderRadius)'}
-          transition={'all 0.2s ease-in-out'}
-          _hover={{
-            outline: '1px solid var(--midPurpleGray, #432E4C)',
-          }}>
+          href='/'
+          _hover={{ textDecoration: 'none' }}
+          textDecoration={'none'}>
           <LogoContent color={color} />
         </Link>
       ) : (
@@ -35,6 +31,14 @@ export default function Logo({ color, shouldLink = true, animate = false }) {
 export const LogoContent = ({ color, animate }) => {
   return (
     <Flex
+      maxW={'fit-content'}
+      pt={'0.2rem'}
+      color={color?.font || 'var(--darkPurpleGrayAlt, #432E4C)'}
+      borderRadius={'var(--mainBorderRadius)'}
+      transition={'all 0.2s ease-in-out'}
+      _hover={{
+        outline: '1px solid var(--midPurpleGray, #432E4C)',
+      }}
       minW={'fit-content'}
       align={'flex-end'}
       p={'0.3125rem 1.4375rem'}>

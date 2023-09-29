@@ -15,6 +15,7 @@ import { Flex } from '@chakra-ui/react';
 import Logo from '../_components/brandElements/logo';
 import DesktopNav from './desktopNav';
 import MobileNav from './mobileNav';
+import ContactDrawer from './contactDrawer';
 import { routeStyles } from '../lib/styles/routeStyles';
 
 export default function Navbar() {
@@ -52,6 +53,7 @@ export default function Navbar() {
         />
         {!loading && isMobile ? <MobileNav /> : <DesktopNav />}
       </Flex>
+      <ContactDrawer />
     </Flex>
   );
 }

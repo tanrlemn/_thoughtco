@@ -12,9 +12,11 @@ export default function MainButton({
   hoverTextColor = 'var(--blackAlt, #161616)',
   hoverBorderColor = 'var(--darkPurpleGray, #584361)',
   borderRadius = 'var(--mainBorderRadius)',
+  setOpenContact,
 }) {
   return (
     <Button
+      onClick={() => setOpenContact && setOpenContact(true)}
       _hover={{
         background: hoverBgColor,
         color: hoverTextColor,
