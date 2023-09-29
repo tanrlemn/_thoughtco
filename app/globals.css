@@ -104,6 +104,28 @@ body {
   animation: animateText 3s ease-in-out infinite;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background: var(--darkestPurple90);
+  backdrop-filter: blur(10px) saturate(100%);
+}
+
+::-webkit-scrollbar-track-piece {
+  width: 0.5rem;
+  background: transparent;
+  backdrop-filter: blur(10px) saturate(100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--white30);
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0.25rem;
+  outline: 1px solid var(--darkestPurple90);
+}
+
 @keyframes loading {
   0% {
     transform: scale(1);
