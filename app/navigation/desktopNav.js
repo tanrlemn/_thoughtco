@@ -4,7 +4,7 @@
 import { Box, Heading, Text, HStack, Link, Button } from '@chakra-ui/react';
 
 // local components
-import MainButton from '../_components/mainButton';
+import MainButton from '../_components/buttons/mainButton';
 import { routeList } from './routeList';
 
 export default function DesktopNav() {
@@ -31,6 +31,7 @@ const NavLink = ({ title, path }) => {
     <Link
       _hover={{
         background: 'var(--lightOrange, #F8AD4F)',
+        color: 'var(--darkPurpleGrayAlt, #432E4C)',
         borderRadius: 'var(--mainBorderRadius)',
       }}
       transition={'all 0.2s ease-in-out'}

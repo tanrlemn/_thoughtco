@@ -34,7 +34,9 @@
   --blue: #0098ff;
   --blueAlt: #0085d8;
   --darkBlue: #0081d9;
+  --darkerBlue: #003456;
   --darkestBlue: #071a35;
+  --darkestBlue90: #071a35d3;
 
   /* Purples */
   --lightPurpleGray: #e0c8ea;
@@ -45,6 +47,7 @@
   --darkPurpleGray: #584361;
   --darkPurpleGrayAlt: #432e4c;
   --darkestPurple: #210735;
+  --darkestPurple90: #210735ca;
 
   /* Pinks */
   --lightPink: #f2ceec;
@@ -59,6 +62,7 @@
   --boldYellow: #fec501;
 
   /* Oranges */
+  --lightestOrange90: #f4efecd7;
   --lightestOrange: #d9d0cb;
   --lightOrange: #f8ad4f;
   --midOrange: #f5b463;
@@ -86,4 +90,70 @@ body {
 body {
   color: var(--black);
   background: var(--lightestOrange, #d9d0cb);
+}
+
+.loading {
+  animation: loading 3s ease-in-out infinite;
+}
+
+.animateUnderscore {
+  animation: animateUnderscore 3s ease-in-out infinite;
+}
+
+.animateText {
+  animation: animateText 3s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animateUnderscore {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes animateText {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-1px);
+  }
+
+  30% {
+    transform: translateX(1px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }

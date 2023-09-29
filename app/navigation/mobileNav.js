@@ -1,7 +1,8 @@
 'use client';
 
 // hooks
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 // chakra-ui
 import {
@@ -22,12 +23,20 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 // local components
+import { routeStyles } from '@/app/lib/styles/routeStyles';
 import Logo from '../_components/brandElements/logo';
 import { routeList } from './routeList';
 
 export default function MobileNav() {
+  const pathname = usePathname();
+  const [routeStyle, setRouteStyle] = useState(routeStyles[pathname]);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
+
+  useEffect(() => {
+    setRouteStyle(routeStyles[pathname]);
+  }, [pathname]);
 
   return (
     <>
@@ -35,6 +44,9 @@ export default function MobileNav() {
         ref={btnRef}
         icon={<HamburgerIcon />}
         onClick={onOpen}
+        background={'transparent'}
+        color={routeStyle?.logoColor.font}
+        _hover={{ background: 'transparent', border: routeStyle?.borderBottom }}
       />
 
       <Drawer
@@ -43,10 +55,19 @@ export default function MobileNav() {
         onClose={onClose}
         finalFocusRef={btnRef}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent
+          color={routeStyle?.navbarTextColor || 'inherit'}
+          background={
+            routeStyle?.backgroundColor || 'var(--lightestOrange, #d9d0cb)'
+          }
+          backdropFilter={'blur(10px) saturate(100%)'}>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Logo />
+            <Logo
+              color={
+                routeStyle?.logoColor || 'var(--darkPurpleGrayAlt, #432E4C)'
+              }
+            />
           </DrawerHeader>
 
           <DrawerBody>
@@ -64,6 +85,9 @@ export default function MobileNav() {
 
           <DrawerFooter>
             <Button
+              color={
+                routeStyle?.logoColor || 'var(--darkPurpleGrayAlt, #432E4C)'
+              }
               variant='outline'
               mr={3}
               onClick={onClose}>
