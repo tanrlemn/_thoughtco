@@ -17,7 +17,7 @@ export const routeStyles = {
       underscore: 'var(--lightBlue, #afd8f2)',
     },
     backgroundColor: 'var(--darkestBlue, #071a35)',
-    borderBottom: '1px solid var(--darkPurpleGrayAlt, #432E4C)',
+    borderBottom: '1px solid var(--darkerBlue, #003456)',
   },
   '/studies': {
     navbarColor: 'var(--darkestPurple90, #210735ca)',

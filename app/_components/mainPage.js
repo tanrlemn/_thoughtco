@@ -22,6 +22,7 @@ export default function MainPage({ children, routeStyle }) {
   }, [setLoading, pathname]);
   return (
     <Box
+      color={routeStyle?.navbarTextColor}
       background={routeStyle?.backgroundColor}
       minW={'100%'}
       minH={'100vh'}>

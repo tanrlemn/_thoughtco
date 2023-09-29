@@ -4,7 +4,7 @@
 import { Box, Heading, Text, HStack, Link, Button } from '@chakra-ui/react';
 
 // local components
-import MainButton from '../_components/mainButton';
+import MainButton from '../_components/buttons/mainButton';
 import { routeList } from './routeList';
 
 export default function DesktopNav() {

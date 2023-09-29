@@ -31,6 +31,7 @@ export default function Navbar() {
 
   return (
     <Flex
+      zIndex={1000}
       background={
         routeStyle?.navbarColor || 'var(--lightestOrange90, #f4efecd7)'
       }

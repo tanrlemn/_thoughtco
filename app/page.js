@@ -2,8 +2,8 @@
 import { Box, Heading, Text, Flex, Image, Input } from '@chakra-ui/react';
 
 // local components
-import ImageGrid from './_components/imageGrid';
-import MainButton from './_components/mainButton';
+import ImageGrid from './_components/images/imageGrid';
+import MainButton from './_components/buttons/mainButton';
 import underline from '@/app/_components/brandElements/underline.svg';
 
 // local images
@@ -22,7 +22,7 @@ export default function Home() {
       mb={'12rem'}
       align={{ base: 'flex-start', md: 'center' }}>
       <Box
-        ml={{ base: 0, md: '-7rem' }}
+        ml={{ base: 0, md: '-5rem' }}
         mt={{ base: '1.5rem', md: 0 }}>
         <ImageGrid
           images={[

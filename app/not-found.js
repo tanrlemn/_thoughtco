@@ -2,7 +2,7 @@
 import { Box, Container, Heading, Text, Link } from '@chakra-ui/react';
 
 // local components
-import MainButton from './_components/mainButton';
+import MainButton from './_components/buttons/mainButton';
 
 export default function NotFound() {
   return (
