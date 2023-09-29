@@ -1,17 +1,7 @@
 'use client';
 
 // chakra-ui
-import {
-  Box,
-  Heading,
-  Text,
-  Flex,
-  Center,
-  Image,
-  Link,
-  Grid,
-  GridItem,
-} from '@chakra-ui/react';
+import { Image, Grid, GridItem } from '@chakra-ui/react';
 
 export default function ImageGrid({ images }) {
   const width = {
