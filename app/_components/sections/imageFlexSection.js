@@ -21,7 +21,7 @@ import {
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 // local components
-import IconButton from '../buttons/iconButton';
+import IconLink from '../buttons/iconLink';
 import ImageFrame from '@/app/_components/images/imageFrame';
 
 export default function ImageFlexSection({
@@ -67,7 +67,7 @@ export default function ImageFlexSection({
               <Link
                 href={buttonLink}
                 isExternal={externalLink}>
-                <IconButton
+                <IconLink
                   textColor={unselectedColor}
                   hoverTextColor={color}
                   rightIcon={<ExternalLinkIcon />}

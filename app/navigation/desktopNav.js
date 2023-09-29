@@ -1,13 +1,20 @@
 'use client';
 
+// context
+import { ContactContext } from '../lib/providers/ContactProvider';
+
+// hooks
+import { useContext } from 'react';
+
 // chakra-ui
-import { Box, Heading, Text, HStack, Link, Button } from '@chakra-ui/react';
+import { HStack, Link } from '@chakra-ui/react';
 
 // local components
 import MainButton from '../_components/buttons/mainButton';
 import { routeList } from './routeList';
 
 export default function DesktopNav() {
+  const { setOpenContact } = useContext(ContactContext);
   return (
     <HStack
       w={'100%'}
@@ -21,7 +28,10 @@ export default function DesktopNav() {
           />
         ))}
       </HStack>
-      <MainButton text={'Free consultation'} />
+      <MainButton
+        text={'Free consultation'}
+        setOpenContact={setOpenContact}
+      />
     </HStack>
   );
 }

@@ -1,7 +1,10 @@
 'use client';
 
+// context
+import { ContactContext } from '../lib/providers/ContactProvider';
+
 // hooks
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 
 // chakra-ui
@@ -19,15 +22,19 @@ import {
   Link,
   VStack,
   Heading,
+  Flex,
+  HStack,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, ChatIcon } from '@chakra-ui/icons';
 
 // local components
 import { routeStyles } from '@/app/lib/styles/routeStyles';
 import Logo from '../_components/brandElements/logo';
+import IconLink from '../_components/buttons/iconLink';
 import { routeList } from './routeList';
 
 export default function MobileNav() {
+  const { setOpenContact } = useContext(ContactContext);
   const pathname = usePathname();
   const [routeStyle, setRouteStyle] = useState(routeStyles[pathname]);
 
@@ -40,14 +47,31 @@ export default function MobileNav() {
 
   return (
     <>
-      <IconButton
-        ref={btnRef}
-        icon={<HamburgerIcon />}
-        onClick={onOpen}
-        background={'transparent'}
-        color={routeStyle?.logoColor.font}
-        _hover={{ background: 'transparent', border: routeStyle?.borderBottom }}
-      />
+      <Flex>
+        <IconButton
+          ref={btnRef}
+          icon={<ChatIcon />}
+          onClick={() => setOpenContact(true)}
+          background={'transparent'}
+          color={routeStyle?.logoColor.underscore}
+          opacity={0.6}
+          _hover={{
+            background: 'transparent',
+            border: routeStyle?.borderBottom,
+          }}
+        />
+        <IconButton
+          ref={btnRef}
+          icon={<HamburgerIcon />}
+          onClick={onOpen}
+          background={'transparent'}
+          color={routeStyle?.logoColor.font}
+          _hover={{
+            background: 'transparent',
+            border: routeStyle?.borderBottom,
+          }}
+        />
+      </Flex>
 
       <Drawer
         isOpen={isOpen}
@@ -80,6 +104,22 @@ export default function MobileNav() {
                   <Heading fontWeight={500}>{route.title}</Heading>
                 </Link>
               ))}
+              <Link
+                onClick={() => {
+                  onClose();
+                  setOpenContact(true);
+                }}>
+                <Heading
+                  mt={'1rem'}
+                  borderTop={
+                    routeStyle?.borderBottom ||
+                    '1px solid var(--darkPurpleGrayAlt, #432E4C)'
+                  }
+                  pt={'2rem'}
+                  fontWeight={500}>
+                  Reach out
+                </Heading>
+              </Link>
             </VStack>
           </DrawerBody>
 

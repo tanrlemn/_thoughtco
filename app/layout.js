@@ -8,6 +8,7 @@ const sofiaSans = Sofia_Sans({ subsets: ['latin'] });
 import { ThemeProvider } from './lib/providers/ThemeProvider';
 import { LoadingProvider } from './lib/providers/LoadingProvider';
 import { ScaleProvider } from './lib/providers/ScaleProvider';
+import { ContactProvider } from './lib/providers/ContactProvider';
 
 // local components
 import Navbar from './navigation/navbar';
@@ -25,8 +26,10 @@ export default function RootLayout({ children }) {
         <LoadingProvider>
           <ScaleProvider>
             <ThemeProvider>
-              <Navbar />
-              {children}
+              <ContactProvider>
+                <Navbar />
+                {children}
+              </ContactProvider>
             </ThemeProvider>
           </ScaleProvider>
         </LoadingProvider>
